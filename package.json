@@ -1,0 +1,21 @@
+{
+  "name": "gulp-4-empty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stanislav Vozikov",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "del": "^3.0.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  },
+  "dependencies": {}
+}
