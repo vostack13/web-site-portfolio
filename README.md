@@ -1,2 +1,7 @@
-# gulp4-webpack4-empty
-Стартовая сборка на основе Webpack 4 и Gulp 4
+# Сайт портфолио
+
+Gulp 4
+Webpack 4
+Pug
+Sass
+Vanila JS
