@@ -82,7 +82,7 @@ function server() {
     browserSync.init({
         server: paths.root,
         notify: false,
-        open: true,
+        open: false,
         cors: true,
         ui: false
     });

@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+
+// @font-face {
+// 	font-family: 'Roboto', sans-serif;
+// 	src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500') format('woff');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+@mixin roboto($style: regular) {
+    font-family: 'Roboto', sans-serif;
+
+    @if $style == ligth {
+        font-weight: 300;
+    }
+
+    @if $style == regular {
+        font-weight: 400;
+    }
+
+    @if $style == medium {
+        font-weight: 500;
+    }
+    
+}

@@ -1,53 +1,72 @@
-extends ../_template
+extends ../_layout
 
 block variables
     - var title = 'Главная страница'
 
 block content
+    -
+        var socials = [
+            {
+                class: 'vk',
+                text: 'Вконтакте',
+                link: 'https://vk.com/sonlex'
+            },
+            {
+                class: 'gh',
+                text: 'Github',
+                link: 'https://github.com/vostack13'
+            },
+            {
+                class: 'fb',
+                text: 'Фейсбук',
+                link: 'https://www.facebook.com/stanislav.vozikov.9'
+            },
+        ]
 
-    // Cекция Hero
-    section.section.hero
-        .hero__socials
-            // добавляем компоненту социалок
-            ul.socials
-                each item in ['vk', 'gh', 'fb']
-                    li.socials__item
-                    a(href="" class=`social__item-${item}`).socials__link
-        .hero__menu.hamburger
-        .hero__title
-            .section-title
-                img.section-title__pic
-            .user.hero__user
-                .user__pic
-                    img.user__pic-img
-                .user__desc
-                    .user__desc-name Станислав Возиков
-                    .user__desc-info Личный сайт веб разработчика 
-        .hero__scroll-btn
-            button(type="button").arrow-down Вниз
+    -
+        var menu = [
+            {
+                text: 'Мои работы',
+                link: '/works.html'
+            },
+            {
+                text: 'Обо мне',
+                link: '/about.html'
+            },
+            {
+                text: 'Блог',
+                link: '/blog.html'
+            },
+        ]
 
-    // Секция About
-    section.section.about
-        .about__left
-            .about__left-title
-                .block-title Обо мне
-            .about__left-content
-                .user-desc
-                    .user-desc__img
-                        img.user-desc__avatar
-                    .user-desc__title
-                        .block-subtitle Кто я
-                    .user-desc__text.text-content
-                        p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Подзаголовок единственное жаренные точках, курсивных агентство выйти имени заголовок о. Текстами продолжил которой имеет предложения предупреждал курсивных, реторический гор маленькая.
-                        p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Подзаголовок единственное жаренные точках, курсивных агентство выйти имени заголовок о. Текстами продолжил которой имеет предложения предупреждал курсивных, реторический гор маленькая.
-        .about__right
-            .about__right-title
-                .block-subtitle Чем я могу быть Вам полезен
-            .about__right-desc.text-content
-                p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ее, несколько! Родного, переписали образ!
-            .about__right-content
-                ul.skills-list
-                    li.skills-list__item
-                        .skills-row
-    section.section
-    footer.footer
+    .welcome
+        .welcome__login-btn
+            //- button(type="button").login-btn Авторизоваться
+        .welcome__content
+            aside.form-panel
+                .form-panel__content.user
+                    .user__pic
+                        img(src="/assets/img/avatar.jpg" alt="Аватар Станислава Возикова").user__pic-img
+                    .user__desc
+                        h1.user__desc-name Станислав Возиков 
+                        p.user__desc-info Личный сайт веб разработчика
+                    .user__socials
+                        h2.visible-hiden Мои социальные сети
+                        ul.socials
+                            each item in socials
+                                li.socials__item
+                                    a(
+                                        href=`${item.link}`
+                                        class=`socials__item-${item.class}` 
+                                        target="_blank"
+                                    ).socials__link= item.text
+                .form-panel__btns
+                    h2.visible-hiden Меню сайта
+                    ul.form-panel__btns-list.nav-main
+                        each item in menu
+                            li.form-panel__btns-item.nav-main__item
+                                a(
+                                    href=`${item.link}`
+                                ).nav-menu__link= item.text
+        .welcome__copyright
+            p © Станислав Возиков | Cоздано с любовью в LoftSchool | 2017 — 2018

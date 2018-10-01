@@ -1,0 +1,94 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+// FLEXBOX
+
+// .slider {
+//     height: 100vh;
+//     display: flex;
+//     color: #fff;
+//     font-weight: bold;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+// }
+
+// .slider__info {
+//     background-color: #16a085;
+//     width: 50%;
+//     height: 100%;
+// }
+
+// .slider__display {
+//     background-color: #2c3e50;
+//     width: 50%;
+//     height: 70%;
+// }
+
+// .slider__btbs {
+//     background-color: #d35400;
+//     width: 50%;
+//     height: 30%;
+// }
+
+// @media screen and (max-width: 768px) {
+//     .slider {
+//         flex-wrap: nowrap;
+//     }
+
+//     .slider__info,
+//     .slider__display,
+//     .slider__btbs,
+//      {
+//         width: 100%;
+//     }
+
+//     .slider__display{
+//         order: -10;
+//     }
+
+// }
+
+
+// CSS GRIDS
+
+.slider {
+    color: #fff;
+    font-weight: bold;
+    height: 100vh;
+    display: grid;
+    grid-template: 50% 50%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas:
+        "info display"
+        "info btns"
+}
+
+.slider__info {
+    background-color: #16a085;
+    grid-area: info;
+}
+
+.slider__display {
+    background-color: #2c3e50;
+    grid-area: display;
+}
+
+.slider__btbs {
+    background-color: #d35400;
+    grid-area: btns;
+}
+
+@media screen and (max-width: 768px) {
+    .slider {
+        grid-template-columns: 100%;
+        grid-template-rows: 40% 30% 30%;
+        grid-template-areas:
+            "display"
+            "info"
+            "btns"
+    }
+}

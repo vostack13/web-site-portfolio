@@ -1,1 +1,10 @@
-@import 'common/menu'
+// Настройки
+@import 'adjustment/colors';
+@import 'adjustment/fonts';
+@import 'adjustment/layout';
+
+// Компоненты
+@import 'components/form-panel';
+
+// Страницы
+@import 'pages/index';
