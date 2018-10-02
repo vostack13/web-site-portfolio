@@ -65,19 +65,38 @@
     justify-content: center;
 
     &__item {
-        padding: 8px;
+        margin-left: 14px;
+        transition: .5s;
+        
+        &:first-child{
+            margin-left: 0px;
+        }
     }
 
-    &__link {
-        color: $green-dark;
+    &__item-icon {
+        width: 31px;
+        height: 25px;
+        fill: $green-ligth;
+        transition: .5s;
+        
+    }
+
+    &__item-icon-fb {
+        width: 24px;
+    }
+
+    &__item-link {
+        color: $green-ligth;
         text-decoration: none;
         cursor: pointer;
         @include roboto(medium);
         transition: .5s;
     }
 
-    &__link:hover {
-        color: $green-ligth;
+    &__item:hover {
+        .socials__item-icon {
+            fill: $green-dark;
+        }
     }
 }
 

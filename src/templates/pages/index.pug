@@ -7,14 +7,14 @@ block content
     -
         var socials = [
             {
-                class: 'vk',
-                text: 'Вконтакте',
-                link: 'https://vk.com/sonlex'
-            },
-            {
                 class: 'gh',
                 text: 'Github',
                 link: 'https://github.com/vostack13'
+            },
+            {
+                class: 'vk',
+                text: 'Вконтакте',
+                link: 'https://vk.com/sonlex'
             },
             {
                 class: 'fb',
@@ -57,9 +57,12 @@ block content
                                 li.socials__item
                                     a(
                                         href=`${item.link}`
-                                        class=`socials__item-${item.class}` 
+                                        class=`socials__item-link-${item.class}` 
                                         target="_blank"
-                                    ).socials__link= item.text
+                                    ).socials__item-link 
+                                        svg(
+                                            class=`socials__item-icon-${item.class} socials__item-icon`)
+                                            use(xlink:href=`/assets/img/sprite.svg#${item.class}`)
                 .form-panel__btns
                     h2.visible-hiden Меню сайта
                     ul.form-panel__btns-list.nav-main
