@@ -7,6 +7,18 @@
 // 	font-style: normal;
 // }
 
+@font-face {
+	font-family: 'BERNIER Regular';
+	src: url('../fonts/BERNIERRegular-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin bernier() {
+    font-family: 'BERNIER Regular', sans-serif;
+    font-weight: 400;
+}
+
 @mixin roboto($style: regular) {
     font-family: 'Roboto', sans-serif;
 

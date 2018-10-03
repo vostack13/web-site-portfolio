@@ -1,10 +1,13 @@
 // Настройки
 @import 'adjustment/colors';
 @import 'adjustment/fonts';
+@import 'adjustment/mixins';
 @import 'adjustment/layout';
 
 // Компоненты
 @import 'components/form-panel';
+@import 'components/skills';
 
 // Страницы
 @import 'pages/index';
+@import 'pages/about';

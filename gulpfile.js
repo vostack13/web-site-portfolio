@@ -53,7 +53,7 @@ function styles() {
 
 // webpack
 function scripts() {
-    return gulp.src('src/js/app.js')
+    return gulp.src('src/js/index.js')
         .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.scripts.dest));
 }

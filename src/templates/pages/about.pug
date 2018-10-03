@@ -4,21 +4,48 @@ block variables
     - var title = 'Обо мне'
 
 block content
+    -
+        var socials = [
+            {
+                class: 'gh',
+                text: 'Github',
+                link: 'https://github.com/vostack13'
+            },
+            {
+                class: 'vk',
+                text: 'Вконтакте',
+                link: 'https://vk.com/sonlex'
+            },
+            {
+                class: 'fb',
+                text: 'Фейсбук',
+                link: 'https://www.facebook.com/stanislav.vozikov.9'
+            },
+        ]
 
     // Cекция Hero
     section.section.hero
-        .hero__socials
-            ul.socials
-                each item in ['vk', 'gh', 'fb']
-                    li.socials__item
-                        a(href="" class=`social__item-${item}`).socials__link
-        .hero__menu.hamburger
+        .hero__row-top
+            .hero__socials
+                ul.socials
+                    each item in socials
+                        li.socials__item
+                            a(
+                                href=`${item.link}`
+                                class=`socials__item-link-${item.class}` 
+                                target="_blank"
+                            ).socials__item-link 
+                                svg(
+                                    class=`socials__item-icon-${item.class} socials__item-icon`)
+                                    use(xlink:href=`/assets/img/sprite.svg#${item.class}`)
+            .hero__menu.hamburger
+                button(type="button").hamburger__btn Меню
         .hero__title
             .section-title
                 img.section-title__pic
             .user.hero__user
                 .user__pic
-                    img.user__pic-img
+                    img(src="/assets/img/avatar.jpg" alt="Аватар Станислава Возикова").user__pic-img
                 .user__desc
                     .user__desc-name Станислав Возиков
                     .user__desc-info Личный сайт веб разработчика 
@@ -26,26 +53,26 @@ block content
             button(type="button").arrow-down Вниз
 
     // Секция About
-    section.section.about
+    section(id="about").section.about
         .about__left
             .about__triangle.about__triangle--left
                 svg.triangle.triangle--fill-white
-            .about__left-title
-                .block-title Обо мне
             .about__left-content
-                .user-desc
-                    .user-desc__img
-                        img.user-desc__avatar
-                    .user-desc__title
-                        .block-subtitle Кто я
-                    .user-desc__text.text-content
-                        p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Подзаголовок единственное жаренные точках, курсивных агентство выйти имени заголовок о. Текстами продолжил которой имеет предложения предупреждал курсивных, реторический гор маленькая.
-                        p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Подзаголовок единственное жаренные точках, курсивных агентство выйти имени заголовок о. Текстами продолжил которой имеет предложения предупреждал курсивных, реторический гор маленькая.
+                .about__left-title
+                    h2.block-title.about__block-title Обо мне
+                .about__left-desc.user-desc
+                        .user-desc__img
+                            img(src="/assets/img/avatar_photo.jpg" alt="Аватар Станислава Возикова").user-desc__img-avatar
+                        .user-desc__title
+                            h3.block-subtitle Кто я
+                        .user-desc__text.text-content
+                            p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Подзаголовок единственное жаренные точках, курсивных агентство выйти имени заголовок о. Текстами продолжил которой имеет предложения предупреждал курсивных, реторический гор маленькая.
+                            p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Подзаголовок единственное жаренные точках, курсивных агентство выйти имени заголовок о.
         .about__right
             .about__triangle.about__triangle--right
                 svg.triangle.triangle--fill-beige
             .about__right-title
-                .block-subtitle Чем я могу быть Вам полезен
+                h3.block-subtitle Чем я могу быть Вам полезен
             .about__right-desc.text-content
                 p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ее, несколько! Родного, переписали образ!
             .about__right-content
@@ -57,7 +84,7 @@ block content
                             ul.skills-row__list
                                 li.skills-row__item
                                     .skill
-                                        svg.skill__circle
+                                        .skill__circle
                                         .skill__title
     // Секция Map
     section.section.map

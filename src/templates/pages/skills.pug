@@ -1,0 +1,13 @@
+extends ../_layout
+
+block variables
+    - var title = 'Тест SVG'
+
+block content
+    .page-svg__container
+        h1.page-svg__title SVG анимации
+        .result
+        button(id="anim") Запустить анимацию
+    
+    //- script(src="/assets/js/skills.js")
+    script(src="/assets/js/main.js")

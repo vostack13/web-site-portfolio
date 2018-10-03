@@ -14,9 +14,34 @@ body {
 
 .wrapper {
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .visible-hiden {
     display: none;
+}
+
+.block-title,
+.block-subtitle  {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(63px);
+    white-space: nowrap;
+    color: $black-dark;
+    @include bernier();
+    @include title-decor($black-dark);
+}
+
+.block-subtitle {
+    font-size: rem(35px);
+    color: $black-light;
+}
+
+.text-content p {
+    margin-top: 0px;
+    @include roboto();
+    line-height: rem(24px);
+    color: $black-light;
 }

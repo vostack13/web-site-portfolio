@@ -1,0 +1,97 @@
+.hero {
+    padding: 16px 16px 64px 16px;
+    background: url(../img/bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+.hero__row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero__title {
+    padding-bottom: 120px;
+}
+
+.hero__socials {
+    .socials__item-icon {
+        fill: $white;
+        opacity: .5;
+    }
+
+    .socials__item:hover {
+        .socials__item-icon {
+            fill: $white;
+            opacity: 1;
+        }
+    }
+}
+
+.hero__user {
+    .user__desc-name {
+        font-size: rem(35px);
+        color: $white;
+    }
+
+    .user__desc-info {
+        color: $white;
+    }
+}
+
+.hero__scroll-btn {
+    text-align: center;
+}
+
+.about {
+    display: flex;
+
+    &__left,
+    &__right {
+        width: 50%;
+    }
+
+    &__right {
+        background-color: #eeebdf;
+    }
+}
+
+.about__left {
+    background-color: #efeee9;
+
+    &-content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 95%;
+    }
+    
+    &-title {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+    
+    &-desc {
+        max-width: 440px;
+
+        .user-desc__img {
+            margin-bottom: 32px;
+            width: 100%;
+            overflow: hidden;
+            
+            &-avatar {
+                max-width: 100%;
+            }
+        }
+
+    }
+}
+
+.about__block-title {
+    margin-right: 34px;
+}
+
+.user-desc__title {
+    margin-bottom: 24px;
+}
